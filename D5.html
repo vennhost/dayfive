@@ -174,7 +174,7 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
 		<script>
 		function myMap() {
 		var mapProp= {
-		  center:new google.maps.LatLng(51.508742,-0.120850),
+		  center:new google.maps.LatLng(7.251070,5.203540),
 		  zoom:5,
 		};
 		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -282,7 +282,14 @@ Note: the form should just be implemented in HTML + CSS, no extra code needed.
                     Write on console the size (height and width) of the current browser window
                     Write on console the size (height and width) of the current page window
                 */
-            };
+				var win = window,
+					doc = document,
+					docElem = doc.documentElement,
+					body = doc.getElementsByTagName('body')[0],
+					x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+					y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+				alert(x + ' × ' + y);
+							};
         </script>
     </body>
 </html>
